@@ -11,6 +11,11 @@ Servidor MCP que expone el **Elaniin Design System** a Claude Desktop: catálogo
 | `tokens` | Devuelve los design tokens (colores, tipografía, etc.). |
 | `assets` | Lista/entrega los assets del sistema. |
 
+> ⚠️ **Este es un MCP local (stdio), no un conector remoto.**
+> NO se instala pegando el nombre + link en Claude ("Agregar conector").
+> Si lo intentas verás un error de OAuth (`No se pudo registrar con el servicio de inicio de sesión... ofid_...`).
+> Instálalo **clonando el repo y corriendo el instalador**, como se indica abajo.
+
 ## Requisitos
 
 - [Node.js](https://nodejs.org) 18+
@@ -87,6 +92,17 @@ node uninstall.mjs
 ```
 
 Reinicia Claude Desktop después.
+
+## Problemas comunes
+
+**"No se pudo registrar con el servicio de inicio de sesión de EDS-MCP… ofid_…"**
+Estás intentando agregarlo como conector remoto por URL. Este MCP es local: no uses "Agregar conector". Clona el repo y corre el instalador (ver arriba).
+
+**El MCP no aparece tras instalar**
+Reinicia Claude Desktop por completo (cerrar desde la barra, no solo la ventana).
+
+**Moviste la carpeta y dejó de funcionar**
+La config apunta a la ruta absoluta de `extractor-mcp.js`. Vuelve a correr el instalador desde la nueva ubicación.
 
 ## Uso
 
