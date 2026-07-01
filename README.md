@@ -14,15 +14,40 @@ Servidor MCP que expone el **Elaniin Design System** a Claude Desktop: catálogo
 > ⚠️ **Este es un MCP local (stdio), no un conector remoto.**
 > NO se instala pegando el nombre + link en Claude ("Agregar conector").
 > Si lo intentas verás un error de OAuth (`No se pudo registrar con el servicio de inicio de sesión... ofid_...`).
-> Instálalo **clonando el repo y corriendo el instalador**, como se indica abajo.
+> Corre en la máquina del usuario vía `npx` o clonando el repo (ver abajo).
 
 ## Requisitos
 
 - [Node.js](https://nodejs.org) 18+
 - [Claude Desktop](https://claude.ai/download)
-- [Git](https://git-scm.com)
 
-## Instalación desde GitHub
+## Instalación rápida (npx) ⭐
+
+Sin clonar nada. Agrega esto a tu `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "EDS-MCP": {
+      "command": "npx",
+      "args": ["-y", "elaniin-eds-mcp"]
+    }
+  }
+}
+```
+
+Ubicación de la config:
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+Reinicia Claude Desktop. `npx` descarga y cachea el paquete automáticamente.
+
+> En Claude Code / CLI:
+> ```bash
+> claude mcp add EDS-MCP -- npx -y elaniin-eds-mcp
+> ```
+
+## Instalación desde GitHub (alternativa)
 
 ### 1. Clonar el repo
 

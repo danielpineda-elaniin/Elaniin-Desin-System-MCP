@@ -1,8 +1,22 @@
 {
-  "name": "extractor-skill",
+  "name": "elaniin-eds-mcp",
   "version": "1.0.0",
+  "description": "MCP server para el Elaniin Design System: catalogo, componentes, tokens y assets.",
   "type": "module",
-  "private": true,
+  "bin": {
+    "elaniin-eds-mcp": "extractor-mcp.js"
+  },
+  "files": [
+    "extractor-mcp.js",
+    "design-system.html",
+    "base.css",
+    "assets"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielpineda-elaniin/Elaniin-Desin-System-MCP.git"
+  },
+  "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0"
   }
